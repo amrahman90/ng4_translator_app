@@ -1,0 +1,66 @@
+<div class="row">
+    <div id="translateForm">
+
+        <div class="col-sm-6">
+            <div class="dropdown">
+                <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>-->
+                <!-- <select class="dropdown-menu" aria-labelledby="dropdownMenuButton" name="language" [(ngModel)]="language" id="language" (ngModelChange)="translateText(textToTranslate,$event)">
+                    <option class="dropdown-item" *ngFor="let item of selectOption" [value]="item.value"> {{item.label}}</option>
+                </select> -->
+            </div>
+
+            <form id="transForm" class="form-inline well" submit="translateText(textToTranslate,language)">
+
+
+                <!--<mat-radio-group name="language" [(ngModel)]="language" (ngModelChange)="translateText(textToTranslate,$event)">
+                    <mat-radio-button *ngFor="let item of selectOption" [value]="item.value">
+                        {{item.label}}
+                    </mat-radio-button>
+                </mat-radio-group>-->
+
+
+                <br>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input name="textToTranslate" class="mdl-textfield__input" (ngModelChange)="translateText($event,language)" [(ngModel)]="textToTranslate"
+                        type="text" placeholder="Enter a Word..." id="sample3">
+                    <!--<label class="mdl-textfield__label" for="sample3">Enter a Word...</label>-->
+                </div>
+                <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" (click)="translateText(textToTranslate,language)"
+                    value="Translate">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" (click)="speak()">
+                    <span class="glyphicon glyphicon-volume-up"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="target" id="translateForm">
+
+        <div class="col-sm-6">
+            <div class="dropdown">
+                <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>-->
+                <select class="dropdown-menu" aria-labelledby="dropdownMenuButton" name="language" [(ngModel)]="language" id="language" (ngModelChange)="translateText(textToTranslate,$event)">
+                    <option class="dropdown-item" *ngFor="let item of selectOption" [value]="item.value"> {{item.label}}</option>
+                </select>
+            </div>
+            <div class="form-inline well">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <h2 class="text-success">{{translatedText}}</h2>
+                </div>
+                <div *ngIf="translatedText">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button1" (click)="test()">
+                        <span class="glyphicon glyphicon-volume-up"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

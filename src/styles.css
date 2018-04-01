@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "../node_modules/sweetalert2/sweetalert2.css"*/
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+  background:#fefefe;
+}
+#transForm{
+    border-radius:10px;
+    border: 1px #ccc solid;
+  }
+  
+
